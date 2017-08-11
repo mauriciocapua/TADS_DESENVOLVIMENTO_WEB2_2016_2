@@ -1,0 +1,8 @@
+negocio\ClienteDAO.class
+negocio\Dependente.class
+negocio\Cliente.class
+servlet\FrontController.class
+persistencia\ConnectionFactory.class
+controllers\Controller.class
+controllers\CarregarIndex.class
+filter\FilterDB.class

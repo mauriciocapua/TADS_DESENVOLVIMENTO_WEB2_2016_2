@@ -1,0 +1,15 @@
+Auxiliar\StringUtil.class
+model\AtendenteDAO.class
+model\CompraDAO.class
+model\Compra.class
+model\Atendente.class
+controllers\ControllerCliente.class
+model\ProdutoDAO.class
+controllers\ControllerAtendente.class
+controllers\ControllerProduto.class
+model\Cliente.class
+model\Produto.class
+controllers\ControllerUpload.class
+model\Item.class
+model\ClienteDAO.class
+Interceptors\AutorizadorInterceptor.class

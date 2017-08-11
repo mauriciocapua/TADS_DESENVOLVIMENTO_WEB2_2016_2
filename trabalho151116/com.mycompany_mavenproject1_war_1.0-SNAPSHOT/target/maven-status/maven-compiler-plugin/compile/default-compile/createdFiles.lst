@@ -1,0 +1,9 @@
+controllers\ControllerCliente.class
+controllers\LoginController.class
+model\ProdutoDAO.class
+controllers\ControllerProduto.class
+model\Cliente.class
+model\Produto.class
+persistencia\ConnectionFactory.class
+model\ClienteDAO.class
+Interceptors\AutorizadorInterceptor.class

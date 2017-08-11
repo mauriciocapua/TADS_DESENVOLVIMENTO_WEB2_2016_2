@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package persistencia;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import negocio.Cliente;
+
+/**
+ *
+ * @author Mauricio Capua
+ */
+public class ClienteDAO {
+    private Connection connection;
+
+    public ClienteDAO(Connection con) {
+        this.connection = con;
+    }
+
+    public List<Cliente> listarTodos() throws Exception {
+        List<Cliente> vetCliente = new ArrayList<>();
+        String sql = "SELECT * FROM cliente";
+        PreparedStatement sqlSelect = connection.prepareStatement(sql);
+        ResultSet rs = sqlSelect.executeQuery();
+        Cliente cliente;
+        while (rs.next()) {
+            cliente = new Cliente();
+            cliente.setId(rs.getInt("id"));
+            cliente.setNome(rs.getString("nome"));
+            vetCliente.add(cliente);
+        }
+        sqlSelect.close();
+        return vetCliente;
+    }
+
+    public Cliente listarCliente(int idCliente) throws Exception {
+        String sql = "SELECT * FROM cliente where id = ?;";
+        PreparedStatement sqlSelect = connection.prepareStatement(sql);
+        sqlSelect.setInt(1, idCliente);
+        ResultSet rs = sqlSelect.executeQuery();
+        Cliente cliente = null;
+        while (rs.next()) {
+            cliente = new Cliente();
+            cliente.setId(rs.getInt("id"));
+            cliente.setNome(rs.getString("nome"));
+        }
+        sqlSelect.close();
+        return cliente;
+    }
+}

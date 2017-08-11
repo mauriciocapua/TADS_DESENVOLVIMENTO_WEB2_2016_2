@@ -1,0 +1,5 @@
+controllers\ControllerCliente.class
+negocio\Cliente.class
+persistencia\ClienteDAO.class
+persistencia\ConnectionFactory.class
+com\mycompany\mavenproject1\NewServlet.class
